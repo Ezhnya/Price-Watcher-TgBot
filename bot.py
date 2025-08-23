@@ -7,7 +7,7 @@ from database import init_db
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token=8362036862:AAH0lDjFSfep9_-6DDVlFR8D_cXBcdMKDIQ)
+bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
 # Реєструємо хендлери
