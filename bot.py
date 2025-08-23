@@ -1,21 +1,21 @@
-import logging
-from aiogram import Bot, Dispatcher, executor
+from aiogram import Bot, Dispatcher
+import asyncio
 from config import TOKEN
 from handlers import register_handlers
-from scheduler import setup_scheduler
 from database import init_db
+from scheduler import setup_scheduler
 
-logging.basicConfig(level=logging.INFO)
-
-bot = Bot(token=TOKEN)
-dp = Dispatcher(bot)
-
-# Реєструємо хендлери
-register_handlers(dp)
-
-# Підключаємо планувальник
-setup_scheduler(dp, bot)
+async def main():
+    bot = Bot(token=TOKEN)
+    dp = Dispatcher()
+    register_handlers(dp)
+    setup_scheduler(dp, bot)
+    init_db()
+    try:
+        await dp.start_polling(bot)
+    finally:
+        await bot.session.close()
 
 if __name__ == "__main__":
-    init_db()
-    executor.start_polling(dp, skip_updates=True)
+    import asyncio
+    asyncio.run(main())
