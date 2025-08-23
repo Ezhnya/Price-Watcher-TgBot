@@ -12,8 +12,11 @@ Telegram bot that tracks product prices from Rozetka and notifies users when the
 
 ## 🛠 Installation
 
-git clone https://github.com/ezhnya/price-watcher.git
-cd price_watcher
+git clone https://github.com/yourusername/ua_price_watcher_real.git
+cd ua_price_watcher_real
 pip install -r requirements.txt
-# Price-Watcher
 
+Set your bot token in config.py.
+
+## ▶️ Run
+python bot.py
