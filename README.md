@@ -20,3 +20,11 @@ Set your bot token in config.py.
 
 ## ▶️ Run
 python bot.py
+
+## 👤 Author
+
+Developed with by Ezhnya GitHub | Telegram
+
+## 📜 License
+
+This project is free for educational and personal use. Please credit the author: © 2025 Ezhnya
