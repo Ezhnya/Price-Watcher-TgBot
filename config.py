@@ -1,2 +1,2 @@
-TOKEN = "8362036862:AAH0lDjFSfep9_-6DDVlFR8D_cXBcdMKDIQ"
+TOKEN = "your telegrap api token"
 DB_PATH = "database.db""
