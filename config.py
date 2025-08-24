@@ -1,2 +1,2 @@
-TOKEN = "8362036862:AAH0lDjFSfep9_-6DDVlFR8D_cXBcdMKDIQ"
+TOKEN = "your bot api token here"
 DB_PATH = "database.db"
