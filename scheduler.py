@@ -27,7 +27,7 @@ async def check_prices(bot):
             if not last_price or new_price < last_price:
                 await bot.send_message(
                     user_id,
-                    f"📉 Ціна впала на {name}!\nБуло: {last_price or '---'} грн\nСтало: {new_price} грн"
+                    f"📉 The price fell to {name}!\nBefore: {last_price or '---'} UAH\nAfter: {new_price} UAH"
                 )
             update_price(pid, new_price)
 
