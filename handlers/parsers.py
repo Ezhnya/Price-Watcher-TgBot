@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 def get_price(url: str) -> float | None:
     """
-    Парсинг ціни з Rozetka за посиланням на товар.
+    Parsing price from Rozetka by product link.
     """
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -20,5 +20,5 @@ def get_price(url: str) -> float | None:
             price = "".join(ch for ch in price_tag.text if ch.isdigit())
             return float(price)
     except Exception as e:
-        print("Парсинг помилка:", e)
+        print("Parsing problem:", e)
     return None
