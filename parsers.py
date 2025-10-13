@@ -2,10 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 
 def get_price(url: str) -> float | None:
-    """
-    Парсинг ціни з Rozetka за посиланням на товар.
-    Підтримує кілька варіантів класів тегів.
-    """
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                       "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -15,8 +11,7 @@ def get_price(url: str) -> float | None:
         resp = requests.get(url, headers=headers, timeout=7)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
-
-        # пробуємо кілька селекторів
+        
         selectors = ["p.product-price__big", "span.price", "div.product-price__top"]
         for sel in selectors:
             price_tag = soup.select_one(sel)
@@ -25,5 +20,5 @@ def get_price(url: str) -> float | None:
                 if price:
                     return float(price)
     except Exception as e:
-        print("Парсинг помилка:", e)
+        print("Parsing problem:", e)
     return None
