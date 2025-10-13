@@ -21,7 +21,7 @@ async def stats(message: types.Message):
     conn.close()
 
     if not rows:
-        await message.answer("📊 Немає даних для статистики.")
+        await message.answer("📊 There is no data for statistics.")
         return
 
     names = {}
@@ -34,9 +34,9 @@ async def stats(message: types.Message):
     for name, data in names.items():
         plt.figure(figsize=(6, 4))
         plt.plot(data["dates"], data["prices"], marker="o")
-        plt.title(f"Динаміка ціни: {name}")
-        plt.xlabel("Дата")
-        plt.ylabel("Ціна, грн")
+        plt.title(f"Price dynamics: {name}")
+        plt.xlabel("Date")
+        plt.ylabel("Price, UAH")
         plt.grid(True)
         plt.xticks(rotation=45)
         plt.tight_layout()
