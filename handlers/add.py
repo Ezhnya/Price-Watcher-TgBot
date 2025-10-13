@@ -11,7 +11,7 @@ async def add_product(message: types.Message):
     try:
         _, name, url = message.text.split(maxsplit=2)
     except ValueError:
-        await message.answer("❌ Формат: /add <назва> <посилання>")
+        await message.answer("❌ Write like this: /add <Name> <Link>")
         return
 
     price = get_price(url)
@@ -25,4 +25,4 @@ async def add_product(message: types.Message):
     conn.commit()
     conn.close()
 
-    await message.answer(f"✅ Додано {name}\nПоточна ціна: {price or 'невідома'} грн")
+    await message.answer(f"✅ Added {name}\nCurrent price: {price or 'unknown'} UAH")
