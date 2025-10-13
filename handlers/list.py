@@ -14,9 +14,9 @@ async def list_products(message: types.Message):
     conn.close()
 
     if not rows:
-        await message.answer("📋 У тебе ще немає відстежуваних товарів.")
+        await message.answer("📋 You don't have any tracked items yet.")
     else:
-        msg = "📋 Список товарів:\n"
+        msg = "📋 List:\n"
         for name, url, price in rows:
-            msg += f"- {name}: {price or '---'} грн\n{url}\n"
+            msg += f"- {name}: {price or '---'} UAH\n{url}\n"
         await message.answer(msg)
