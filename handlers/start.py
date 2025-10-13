@@ -13,6 +13,6 @@ async def start_handler(message: types.Message):
     conn.commit()
     conn.close()
     await message.answer(
-        "👋 Привіт! Я UA Price Watcher Bot.\n"
-        "Додай товар для відстеження: /add <назва> <посилання>"
+        "👋 Hello! It is UA Price Watcher Bot.\n"
+        "Add your item for tracking: /add <name> <link>"
     )
