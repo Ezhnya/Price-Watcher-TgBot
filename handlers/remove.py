@@ -10,7 +10,7 @@ async def remove_product(message: types.Message):
     try:
         _, name = message.text.split(maxsplit=1)
     except ValueError:
-        await message.answer("❌ Формат: /remove <назва>")
+        await message.answer("❌ Write like this: /remove <Name>")
         return
 
     conn = sqlite3.connect(DB_PATH)
@@ -19,4 +19,4 @@ async def remove_product(message: types.Message):
     conn.commit()
     conn.close()
 
-    await message.answer(f"🗑 Видалено {name}")
+    await message.answer(f"🗑 Deleted {name}")
